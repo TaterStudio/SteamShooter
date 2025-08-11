@@ -18,6 +18,18 @@ config/icon="res://icon.svg"
 
 project/assembly_name="steam_shooter"
 
+[layer_names]
+
+2d_render/layer_1="天空盒"
+2d_render/layer_2="背景"
+2d_render/layer_3="关卡"
+2d_render/layer_4="角色"
+2d_render/layer_5="特效"
+2d_render/layer_6="前景"
+2d_render/layer_7="UI"
+2d_physics/layer_1="关卡"
+2d_physics/layer_2="角色"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
