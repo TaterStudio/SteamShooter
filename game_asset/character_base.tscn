@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdq4pmlposiee"]
+
+[ext_resource type="Script" uid="uid://vhuhq7ris3jn" path="res://script/CharacterControl.cs" id="1_fk2su"]
+[ext_resource type="SpriteFrames" uid="uid://buejy30kh37tf" path="res://art_asset/demo_player/sprite_frames.tres" id="1_vfmla"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4p8nw"]
+size = Vector2(12, 14)
+
+[node name="CharacterBase" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_fk2su")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_4p8nw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0, -12)
+sprite_frames = ExtResource("1_vfmla")
+animation = &"idle"
+frame_progress = 0.617473

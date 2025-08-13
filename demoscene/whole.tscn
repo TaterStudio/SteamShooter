@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=4 uid="uid://cttdumnp083ko"]
+
+[ext_resource type="PackedScene" uid="uid://dssqngt2ocike" path="res://demoscene/onetile.tscn" id="1_uup7v"]
+[ext_resource type="PackedScene" uid="uid://bsdvee6gj8ys7" path="res://game_asset/player_base.tscn" id="2_1o1gq"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1o1gq"]
+resource_name = "1"
+scenes/1/scene = ExtResource("1_uup7v")
+
+[sub_resource type="TileSet" id="TileSet_3nl2s"]
+sources/0 = SubResource("TileSetScenesCollectionSource_1o1gq")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAQACAAAAAAAAAAAAAQABAP//AAAAAAAAAQACAP//AAAAAAAAAQADAP//AAAAAAAAAQAEAP//AAAAAAAAAQAEAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQAFAAEAAAAAAAAAAQAEAAEAAAAAAAAAAQADAAAAAAAAAAAAAQAEAP7/AAAAAAAAAQAFAP7/AAAAAAAAAQAFAP//AAAAAAAAAQAFAAIAAAAAAAAAAQAFAAMAAAAAAAAAAQAEAAMAAAAAAAAAAQADAAMAAAAAAAAAAQADAAIAAAAAAAAAAQACAAIAAAAAAAAAAQABAAIAAAAAAAAAAQABAAEAAAAAAAAAAQADAAEAAAAAAAAAAQACAAEAAAAAAAAAAQAEAAIAAAAAAAAAAQAAAP//AAAAAAAAAQD/////AAAAAAAAAQD+////AAAAAAAAAQD9////AAAAAAAAAQD8////AAAAAAAAAQD7////AAAAAAAAAQD+/wAAAAAAAAAAAQD//wAAAAAAAAAAAQAAAAAAAAAAAAAAAQD9/wAAAAAAAAAAAQD8/wAAAAAAAAAAAQD7/wAAAAAAAAAAAQD6////AAAAAAAAAQD5////AAAAAAAAAQD4////AAAAAAAAAQD3////AAAAAAAAAQD4/wAAAAAAAAAAAQD5/wAAAAAAAAAAAQD6/wAAAAAAAAAAAQD9//z/AAAAAAAAAQD+//z/AAAAAAAAAQD///z/AAAAAAAAAQABAPr/AAAAAAAAAQACAPr/AAAAAAAAAQADAPr/AAAAAAAAAQA=")
+tile_set = SubResource("TileSet_3nl2s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -118.065)
+zoom = Vector2(2, 2)
+
+[node name="CharacterBase" parent="." instance=ExtResource("2_1o1gq")]
+position = Vector2(1, -84)
+Speed = 1.8
