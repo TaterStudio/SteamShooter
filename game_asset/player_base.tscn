@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsdvee6gj8ys7"]
-
-[ext_resource type="PackedScene" uid="uid://bdq4pmlposiee" path="res://game_asset/character_base.tscn" id="1_p7ghg"]
-[ext_resource type="Script" uid="uid://w4b6l7krsm2p" path="res://script/PlayerInput.cs" id="2_u37cy"]
-
-[node name="CharacterBase" instance=ExtResource("1_p7ghg")]
-
-[node name="Node" type="Node" parent="." index="2"]
-script = ExtResource("2_u37cy")

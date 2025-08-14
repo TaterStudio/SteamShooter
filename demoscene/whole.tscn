@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=4 uid="uid://cttdumnp083ko"]
 
 [ext_resource type="PackedScene" uid="uid://dssqngt2ocike" path="res://demoscene/onetile.tscn" id="1_uup7v"]
-[ext_resource type="PackedScene" uid="uid://bsdvee6gj8ys7" path="res://game_asset/player_base.tscn" id="2_1o1gq"]
+[ext_resource type="PackedScene" uid="uid://bsdvee6gj8ys7" path="res://game_asset/character/humanoid/player_base.tscn" id="2_1o1gq"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1o1gq"]
 resource_name = "1"

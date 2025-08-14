@@ -12,7 +12,7 @@ config_version=5
 
 config/name="steam_shooter"
 run/main_scene="uid://cttdumnp083ko"
-config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [dotnet]
@@ -29,11 +29,11 @@ project/assembly_name="steam_shooter"
 2d_render/layer_6="前景"
 2d_render/layer_7="UI"
 2d_physics/layer_1="装饰"
-2d_physics/layer_2="平台"
-2d_physics/layer_3="角色上碰撞"
-2d_physics/layer_4="角色下碰撞"
+2d_physics/layer_2="移动平台"
+2d_physics/layer_3="角色上平台碰撞"
+2d_physics/layer_4="角色下平台碰撞"
 2d_physics/layer_5="子弹碰撞"
-2d_physics/layer_6="角色左右碰撞"
+2d_physics/layer_6="角色左右碰撞墙壁"
 
 [rendering]
 
