@@ -5,6 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ot7e5"]
 
 [node name="Onetile" type="Area2D"]
+collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ot7e5")

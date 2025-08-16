@@ -5,12 +5,6 @@
 
 [node name="CharacterBase" instance=ExtResource("1_steq1")]
 
-[node name="Input" type="Node" parent="." index="0"]
+[node name="Input" type="Node" parent="." index="0" node_paths=PackedStringArray("control")]
 script = ExtResource("2_ycti6")
-
-[node name="Locomotion" parent="." index="1"]
-collision_layer = 0
-
-[connection signal="move_idle" from="Input" to="Locomotion" method="move_idle"]
-[connection signal="move_left" from="Input" to="Locomotion" method="move_left"]
-[connection signal="move_right" from="Input" to="Locomotion" method="move_right"]
+control = NodePath("..")

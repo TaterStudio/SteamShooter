@@ -1,25 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdq4pmlposiee"]
+[gd_scene load_steps=8 format=3 uid="uid://bdq4pmlposiee"]
 
 [ext_resource type="Script" uid="uid://bct1uyynsw8m2" path="res://script_asset/character/character_control.gd" id="1_fk2su"]
-[ext_resource type="Script" uid="uid://cp4l72tusjq8y" path="res://script_asset/shared/game_entity.gd" id="1_tjhhc"]
 [ext_resource type="SpriteFrames" uid="uid://buejy30kh37tf" path="res://art_asset/demo_player/sprite_frames.tres" id="1_vfmla"]
 [ext_resource type="Script" uid="uid://bsqn1g7rgh4qw" path="res://script_asset/shared/health.gd" id="3_ta81r"]
+[ext_resource type="Script" uid="uid://cpdrkfqgdaest" path="res://script_asset/character/character_horizontal_move.gd" id="5_dsqs5"]
+[ext_resource type="Script" uid="uid://fr1dcp5s3e2u" path="res://script_asset/character/character_gravity.gd" id="6_gjfk1"]
+[ext_resource type="Script" uid="uid://de0kb6rt8m68r" path="res://script_asset/character/character_jump.gd" id="7_hkhim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p8nw"]
 size = Vector2(12, 14)
 
-[node name="CharacterBase" type="Node"]
-script = ExtResource("1_tjhhc")
-
-[node name="Locomotion" type="CharacterBody2D" parent="."]
-collision_layer = 62
+[node name="Locomotion" type="CharacterBody2D" node_paths=PackedStringArray("gravityComp", "jumpComp", "horizontalMove")]
+collision_mask = 63
 script = ExtResource("1_fk2su")
+gravityComp = NodePath("CharacterGravity")
+jumpComp = NodePath("Jump")
+horizontalMove = NodePath("HorizontalMove")
 
-[node name="Collision" type="CollisionShape2D" parent="Locomotion"]
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_4p8nw")
 
-[node name="Model" type="AnimatedSprite2D" parent="Locomotion"]
+[node name="Model" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
 position = Vector2(0, -12)
@@ -29,3 +31,19 @@ frame_progress = 0.617473
 
 [node name="Health" type="Node" parent="."]
 script = ExtResource("3_ta81r")
+
+[node name="HorizontalMove" type="Node" parent="."]
+script = ExtResource("5_dsqs5")
+
+[node name="CharacterGravity" type="Node" parent="."]
+script = ExtResource("6_gjfk1")
+fallAcclerate = -350.0
+metadata/_custom_type_script = "uid://fr1dcp5s3e2u"
+
+[node name="Jump" type="Node" parent="."]
+script = ExtResource("7_hkhim")
+initialSpeed = -100.0
+fallAcclerate = -200.0
+currentYSpeed = null
+"跳跃高度" = 2.5
+"跳跃时间" = 0.5

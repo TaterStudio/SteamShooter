@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://biyude7mtresy"]
+
+[ext_resource type="Texture2D" uid="uid://cxxml7cwhhmwp" path="res://art_library/purchased/artist_boy/Skybox.jpg" id="1_nfrvx"]
+
+[node name="Background" type="CanvasLayer"]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_nfrvx")

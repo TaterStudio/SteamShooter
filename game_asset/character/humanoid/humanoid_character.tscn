@@ -3,5 +3,3 @@
 [ext_resource type="PackedScene" uid="uid://bdq4pmlposiee" path="res://game_asset/character/character_base.tscn" id="1_equ1m"]
 
 [node name="HumanoidCharacter" instance=ExtResource("1_equ1m")]
-
-[node name="Jump" type="Node" parent="." index="2"]

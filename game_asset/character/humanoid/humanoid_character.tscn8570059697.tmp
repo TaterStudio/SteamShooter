@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi131lnq7kogj"]
+
+[ext_resource type="PackedScene" uid="uid://bdq4pmlposiee" path="res://game_asset/character/character_base.tscn" id="1_equ1m"]
+[ext_resource type="Script" uid="uid://de0kb6rt8m68r" path="res://script_asset/character/character_jump.gd" id="2_w5t8w"]
+
+[node name="HumanoidCharacter" instance=ExtResource("1_equ1m")]
+
+[node name="Jump" type="Node" parent="." index="2"]
+script = ExtResource("2_w5t8w")
