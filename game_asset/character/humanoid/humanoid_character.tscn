@@ -16,8 +16,10 @@ metadata/_custom_type_script = "uid://blo2md1ii0cqc"
 [node name="CharacterDash" parent="." index="8" node_paths=PackedStringArray("locomotion", "character_facing") instance=ExtResource("3_eal3y")]
 locomotion = NodePath("..")
 character_facing = NodePath("../CharacterFacing")
+dash_length = 8.0
 dash_time = 0.5
 
 [node name="TrailEffect" parent="." index="9" node_paths=PackedStringArray("dash", "model") instance=ExtResource("4_khgyy")]
 dash = NodePath("../CharacterDash")
 model = NodePath("../Model")
+interval = 0.08

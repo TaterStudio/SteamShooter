@@ -8,5 +8,6 @@ _dash_timer = NodePath("Timer")
 metadata/_custom_type_script = "uid://drogdwgd2wais"
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
 
 [connection signal="timeout" from="Timer" to="." method="end_dash"]

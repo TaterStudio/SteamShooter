@@ -11,6 +11,7 @@ func _enter_tree() -> void:
 	dash.dash_end.connect(stop_effect);
 func _ready():
 	timer.wait_time = interval;
+	spawn_effect();
 func play_effect():
 	timer.start();
 	pass

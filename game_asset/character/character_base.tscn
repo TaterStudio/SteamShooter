@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://de0kb6rt8m68r" path="res://script_asset/entity/character/character_jump.gd" id="7_hkhim"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p8nw"]
-size = Vector2(12, 14)
+size = Vector2(32, 64)
 
 [node name="Locomotion" type="CharacterBody2D" node_paths=PackedStringArray("gravity_comp", "jump_comp", "horizontal_move")]
 collision_layer = 64
@@ -20,16 +20,17 @@ platform_wall_layers = 32
 script = ExtResource("1_fk2su")
 gravity_comp = NodePath("CharacterGravity")
 jump_comp = NodePath("Jump")
+airborne_state = 1
 horizontal_move = NodePath("HorizontalMove")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -32)
 shape = SubResource("RectangleShape2D_4p8nw")
 
 [node name="Model" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(0, -12)
+position = Vector2(0, -16)
 sprite_frames = ExtResource("1_vfmla")
 animation = &"idle"
 frame_progress = 0.617473
@@ -47,11 +48,11 @@ metadata/_custom_type_script = "uid://fr1dcp5s3e2u"
 
 [node name="Jump" type="Node" parent="."]
 script = ExtResource("7_hkhim")
-initialSpeed = -100.0
+initialSpeed = -200.0
 fallAcclerate = -200.0
 currentYSpeed = null
-"跳跃高度" = 0.78125
-"跳跃时间" = 0.5
+"跳跃高度" = 3.125
+"跳跃时间" = 1.0
 
 [node name="CharacterFacing" type="Node" parent="." node_paths=PackedStringArray("locomotion", "sprite")]
 script = ExtResource("7_bpkrt")
