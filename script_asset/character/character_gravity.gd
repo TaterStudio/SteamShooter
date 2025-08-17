@@ -14,11 +14,13 @@ func _physics_process(delta: float) -> void:
 		return
 	if !control:
 		return
-	if control.airborneState != CharacterControl.AirborneState.Falling:
+	if !control.locomotion_idle():
+		return
+	if control.airborne_state != CharacterControl.AirborneState.Falling:
 		currentYSpeed = 0;
 		return
 	if control.is_on_floor():
-		control.airborneState = CharacterControl.AirborneState.Idle;
+		control.airborne_state = CharacterControl.AirborneState.Idle;
 		control.velocity.y = 0;
 		return
 	currentYSpeed -= self.fallAcclerate * delta;

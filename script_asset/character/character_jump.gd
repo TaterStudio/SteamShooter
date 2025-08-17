@@ -20,10 +20,10 @@ func init(body: CharacterControl) -> void:
 	return
 
 func jump():
-	if control.airborneState == CharacterControl.AirborneState.Idle:
+	if control.airborne_state == CharacterControl.AirborneState.Idle:
 		jump_internal();
 		return;
-	if control.airborneState == CharacterControl.AirborneState.Falling || control.airborneState == CharacterControl.AirborneState.Jumping:
+	if control.airborne_state == CharacterControl.AirborneState.Falling || control.airborne_state == CharacterControl.AirborneState.Jumping:
 		if _jumped_count < jump_count:
 			jump_internal();
 			return;
@@ -31,7 +31,7 @@ func jump():
 func jump_internal():
 		currentYSpeed = initialSpeed;
 		control.velocity.y = currentYSpeed;
-		control.airborneState = CharacterControl.AirborneState.Jumping;
+		control.airborne_state = CharacterControl.AirborneState.Jumping;
 		_jumped_count += 1;
 
 func _physics_process(delta: float) -> void:
@@ -39,18 +39,21 @@ func _physics_process(delta: float) -> void:
 		return
 	if !control:
 		return
-		
+	if !control.locomotion_idle():
+		if control.airborne_jumping():
+			control.airbone_set_falling();
+		return
 	# 当结束跳跃的时候重置跳跃次数
-	if control.airborneState == CharacterControl.AirborneState.Idle:
+	if control.airborne_state == CharacterControl.AirborneState.Idle:
 		_jumped_count = 0;
 		return
-	if control.airborneState != CharacterControl.AirborneState.Jumping:
+	if control.airborne_state != CharacterControl.AirborneState.Jumping:
 		return
 	if control.is_on_ceiling():
-		control.airborneState = CharacterControl.AirborneState.Falling;
+		control.airborne_state = CharacterControl.AirborneState.Falling;
 		return
 	if currentYSpeed >0:
-		control.airborneState = CharacterControl.AirborneState.Falling;
+		control.airborne_state = CharacterControl.AirborneState.Falling;
 		return
 	currentYSpeed -= self.fallAcclerate * delta;
 	control.velocity.y = currentYSpeed;

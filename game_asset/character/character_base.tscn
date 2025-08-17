@@ -11,16 +11,16 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4p8nw"]
 size = Vector2(12, 14)
 
-[node name="Locomotion" type="CharacterBody2D" node_paths=PackedStringArray("gravityComp", "jumpComp", "horizontalMove")]
+[node name="Locomotion" type="CharacterBody2D" node_paths=PackedStringArray("gravity_comp", "jump_comp", "horizontal_move")]
 collision_layer = 64
 collision_mask = 63
 floor_block_on_wall = false
 platform_floor_layers = 4294967176
 platform_wall_layers = 32
 script = ExtResource("1_fk2su")
-gravityComp = NodePath("CharacterGravity")
-jumpComp = NodePath("Jump")
-horizontalMove = NodePath("HorizontalMove")
+gravity_comp = NodePath("CharacterGravity")
+jump_comp = NodePath("Jump")
+horizontal_move = NodePath("HorizontalMove")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
