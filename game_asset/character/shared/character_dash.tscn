@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dg3fci14ds3fr"]
+
+[ext_resource type="Script" uid="uid://drogdwgd2wais" path="res://script_asset/entity/character/character_dash.gd" id="1_nhuwy"]
+
+[node name="CharacterDash" type="Node" node_paths=PackedStringArray("_dash_timer")]
+script = ExtResource("1_nhuwy")
+_dash_timer = NodePath("Timer")
+metadata/_custom_type_script = "uid://drogdwgd2wais"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="end_dash"]

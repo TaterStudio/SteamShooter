@@ -1,0 +1,47 @@
+[gd_resource type="TileSet" load_steps=11 format=3 uid="uid://d1ha6lefog848"]
+
+[ext_resource type="Texture2D" uid="uid://cxlm3uwjct0fy" path="res://art_library/purchased/artist_boy/Bricks/沙砖块.png" id="1_64ij6"]
+[ext_resource type="Texture2D" uid="uid://b22p0onr2dpxi" path="res://art_library/purchased/artist_boy/Bricks/砖块1.png" id="2_bwnop"]
+[ext_resource type="Texture2D" uid="uid://bi8x6uo2sbmfw" path="res://art_library/purchased/artist_boy/Bricks/砖块2.png" id="3_817jm"]
+[ext_resource type="Texture2D" uid="uid://ckhn1302lnfki" path="res://art_library/purchased/artist_boy/Bricks/砖块3.png" id="4_ppbkb"]
+[ext_resource type="Texture2D" uid="uid://bado4r7pdand1" path="res://art_library/purchased/artist_boy/Bricks/砖块4.png" id="5_sl25s"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_64ij6"]
+texture = ExtResource("1_64ij6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bwnop"]
+texture = ExtResource("2_bwnop")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_817jm"]
+texture = ExtResource("3_817jm")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppbkb"]
+texture = ExtResource("4_ppbkb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sl25s"]
+texture = ExtResource("5_sl25s")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 60
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_64ij6")
+sources/1 = SubResource("TileSetAtlasSource_bwnop")
+sources/2 = SubResource("TileSetAtlasSource_817jm")
+sources/3 = SubResource("TileSetAtlasSource_ppbkb")
+sources/4 = SubResource("TileSetAtlasSource_sl25s")

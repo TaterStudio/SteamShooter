@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		return
 	if !control.locomotion_idle():
 		if control.airborne_jumping():
-			control.airbone_set_falling();
+			control.airborne_set_falling();
 		return
 	# 当结束跳跃的时候重置跳跃次数
 	if control.airborne_state == CharacterControl.AirborneState.Idle:
@@ -63,7 +63,7 @@ func _physics_process(delta: float) -> void:
 
 func _get(property):
 	if property == "跳跃高度":
-		return -calculate_max_jump_height(initialSpeed,fallAcclerate)/10;
+		return -calculate_max_jump_height(initialSpeed,fallAcclerate) / Constants.PPU;
 	if property == "跳跃时间":
 		return initialSpeed / fallAcclerate;
 func _get_property_list():
@@ -73,4 +73,4 @@ func _get_property_list():
 	]
 
 func calculate_max_jump_height(initial_speed: float, gravity: float) -> float:
-	return (initial_speed ** 2) / (2 * gravity)
+	return (initial_speed ** 2) / (2 * gravity);

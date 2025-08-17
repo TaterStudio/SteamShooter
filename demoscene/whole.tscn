@@ -1,26 +1,13 @@
-[gd_scene load_steps=7 format=4 uid="uid://cttdumnp083ko"]
+[gd_scene load_steps=4 format=4 uid="uid://cttdumnp083ko"]
 
 [ext_resource type="PackedScene" uid="uid://biyude7mtresy" path="res://game_asset/background.tscn" id="1_3nl2s"]
-[ext_resource type="PackedScene" uid="uid://dssqngt2ocike" path="res://demoscene/onetile.tscn" id="1_uup7v"]
 [ext_resource type="PackedScene" uid="uid://bsdvee6gj8ys7" path="res://game_asset/character/humanoid/player_base.tscn" id="2_1o1gq"]
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1o1gq"]
-resource_name = "1"
-scenes/1/scene = ExtResource("1_uup7v")
-
-[sub_resource type="TileSet" id="TileSet_3nl2s"]
-sources/0 = SubResource("TileSetScenesCollectionSource_1o1gq")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nl2s"]
-size = Vector2(181, 35)
+[ext_resource type="TileSet" uid="uid://d1ha6lefog848" path="res://art_asset/tileset/solid_tile.tres" id="3_3nl2s"]
 
 [node name="Node2D" type="Node"]
 
 [node name="Background" parent="." instance=ExtResource("1_3nl2s")]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAABAAAAAAAAAAAAAQACAAAAAAAAAAAAAQABAP//AAAAAAAAAQACAP//AAAAAAAAAQADAP//AAAAAAAAAQAEAP//AAAAAAAAAQAEAAAAAAAAAAAAAQAFAAAAAAAAAAAAAQAFAAEAAAAAAAAAAQAEAAEAAAAAAAAAAQADAAAAAAAAAAAAAQAEAP7/AAAAAAAAAQAFAP7/AAAAAAAAAQAFAP//AAAAAAAAAQAFAAIAAAAAAAAAAQAFAAMAAAAAAAAAAQAEAAMAAAAAAAAAAQADAAMAAAAAAAAAAQADAAIAAAAAAAAAAQACAAIAAAAAAAAAAQABAAIAAAAAAAAAAQABAAEAAAAAAAAAAQADAAEAAAAAAAAAAQACAAEAAAAAAAAAAQAEAAIAAAAAAAAAAQAAAP//AAAAAAAAAQD/////AAAAAAAAAQD+////AAAAAAAAAQD9////AAAAAAAAAQD8////AAAAAAAAAQD7////AAAAAAAAAQD+/wAAAAAAAAAAAQD//wAAAAAAAAAAAQAAAAAAAAAAAAAAAQD9/wAAAAAAAAAAAQD8/wAAAAAAAAAAAQD7/wAAAAAAAAAAAQD6////AAAAAAAAAQD5////AAAAAAAAAQD4////AAAAAAAAAQD3////AAAAAAAAAQD4/wAAAAAAAAAAAQD5/wAAAAAAAAAAAQD6/wAAAAAAAAAAAQD9//z/AAAAAAAAAQD+//z/AAAAAAAAAQD///z/AAAAAAAAAQABAPr/AAAAAAAAAQACAPr/AAAAAAAAAQADAPr/AAAAAAAAAQA=")
-tile_set = SubResource("TileSet_3nl2s")
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(31, 13)
@@ -28,10 +15,6 @@ position = Vector2(31, 13)
 [node name="CharacterBase" parent="." instance=ExtResource("2_1o1gq")]
 position = Vector2(-3, -26)
 
-[node name="Area2D" type="StaticBody2D" parent="."]
-collision_layer = 12
-collision_mask = 64
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-13.5, -1.5)
-shape = SubResource("RectangleShape2D_3nl2s")
+[node name="SolidLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAD9/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD4/wAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAEAP3/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAD8//r/AAAAAAAAAAD9//r/AAAAAAAAAAD+//r/AAAAAAAAAAD///r/AAAAAAAAAAA=")
+tile_set = ExtResource("3_3nl2s")

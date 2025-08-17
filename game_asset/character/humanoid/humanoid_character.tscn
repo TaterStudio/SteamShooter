@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi131lnq7kogj"]
+[gd_scene load_steps=5 format=3 uid="uid://bi131lnq7kogj"]
 
 [ext_resource type="PackedScene" uid="uid://bdq4pmlposiee" path="res://game_asset/character/character_base.tscn" id="1_equ1m"]
-[ext_resource type="Script" uid="uid://blo2md1ii0cqc" path="res://script_asset/character/humanoid/humanoid_animation.gd" id="2_w5t8w"]
+[ext_resource type="Script" uid="uid://blo2md1ii0cqc" path="res://script_asset/entity/character/humanoid/humanoid_animation.gd" id="2_w5t8w"]
+[ext_resource type="PackedScene" uid="uid://dg3fci14ds3fr" path="res://game_asset/character/shared/character_dash.tscn" id="3_eal3y"]
+[ext_resource type="PackedScene" uid="uid://bvl5ufok80p80" path="res://game_asset/visual_effect/trail_effect.tscn" id="4_khgyy"]
 
 [node name="HumanoidCharacter" instance=ExtResource("1_equ1m")]
 
@@ -10,3 +12,12 @@ script = ExtResource("2_w5t8w")
 locomotion = NodePath("..")
 anim_comp = NodePath("../Model")
 metadata/_custom_type_script = "uid://blo2md1ii0cqc"
+
+[node name="CharacterDash" parent="." index="8" node_paths=PackedStringArray("locomotion", "character_facing") instance=ExtResource("3_eal3y")]
+locomotion = NodePath("..")
+character_facing = NodePath("../CharacterFacing")
+dash_time = 0.5
+
+[node name="TrailEffect" parent="." index="9" node_paths=PackedStringArray("dash", "model") instance=ExtResource("4_khgyy")]
+dash = NodePath("../CharacterDash")
+model = NodePath("../Model")

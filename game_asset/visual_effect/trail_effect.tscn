@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvl5ufok80p80"]
+
+[ext_resource type="Script" uid="uid://c7gtr1fskduw5" path="res://script_asset/visual_effect/trail_effect.gd" id="2_jbvp4"]
+[ext_resource type="PackedScene" uid="uid://kk0cx6jqsy5d" path="res://game_asset/visual_effect/trail_effect_item.tscn" id="2_nwd1x"]
+
+[node name="TrailEffect" type="Node"]
+script = ExtResource("2_jbvp4")
+item = ExtResource("2_nwd1x")
+metadata/_custom_type_script = "uid://c7gtr1fskduw5"
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="spawn_effect"]
