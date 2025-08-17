@@ -8,3 +8,6 @@
 [node name="Input" type="Node" parent="." index="0" node_paths=PackedStringArray("control")]
 script = ExtResource("2_ycti6")
 control = NodePath("..")
+
+[node name="Jump" parent="." index="6"]
+jump_count = 2

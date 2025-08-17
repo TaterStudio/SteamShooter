@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://cttdumnp083ko"]
+[gd_scene load_steps=7 format=4 uid="uid://cttdumnp083ko"]
 
 [ext_resource type="PackedScene" uid="uid://biyude7mtresy" path="res://game_asset/background.tscn" id="1_3nl2s"]
 [ext_resource type="PackedScene" uid="uid://dssqngt2ocike" path="res://demoscene/onetile.tscn" id="1_uup7v"]
@@ -10,6 +10,9 @@ scenes/1/scene = ExtResource("1_uup7v")
 
 [sub_resource type="TileSet" id="TileSet_3nl2s"]
 sources/0 = SubResource("TileSetScenesCollectionSource_1o1gq")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3nl2s"]
+size = Vector2(181, 35)
 
 [node name="Node2D" type="Node"]
 
@@ -23,4 +26,12 @@ tile_set = SubResource("TileSet_3nl2s")
 position = Vector2(31, 13)
 
 [node name="CharacterBase" parent="." instance=ExtResource("2_1o1gq")]
-position = Vector2(-1, -19)
+position = Vector2(-3, -26)
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+collision_layer = 12
+collision_mask = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-13.5, -1.5)
+shape = SubResource("RectangleShape2D_3nl2s")

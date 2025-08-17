@@ -19,12 +19,12 @@ func _process(_delta):
 	elif direction < 0:
 		control.emit_signal("move_left")
 		pass;
-	if Input.is_action_pressed("dash"):
+	if Input.is_action_just_pressed("dash"):
 		control.emit_signal("action_dash")
 		pass;
-	if Input.is_action_pressed("attack"):
+	if Input.is_action_just_pressed("attack"):
 		control.emit_signal("action_attack")
 		pass;
-	if Input.is_action_pressed("jump"):
+	if Input.is_action_just_pressed("jump"):
 		control.emit_signal("action_jump")
 		pass

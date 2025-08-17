@@ -6,23 +6,43 @@ extends Node
 @export var fallAcclerate = -10.0;
 @export var control: CharacterControl = null;
 @export var currentYSpeed = 0;
+@export var jump_count = 1;
+var _jumped_count = 0;
+
 #region func
 
+func _init() -> void:
+	_jumped_count = 0;
+	return
+	
 func init(body: CharacterControl) -> void:
 	control = body;
 	return
 
 func jump():
 	if control.airborneState == CharacterControl.AirborneState.Idle:
+		jump_internal();
+		return;
+	if control.airborneState == CharacterControl.AirborneState.Falling || control.airborneState == CharacterControl.AirborneState.Jumping:
+		if _jumped_count < jump_count:
+			jump_internal();
+			return;
+		return;
+func jump_internal():
 		currentYSpeed = initialSpeed;
 		control.velocity.y = currentYSpeed;
 		control.airborneState = CharacterControl.AirborneState.Jumping;
-	return
+		_jumped_count += 1;
 
 func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	if !control:
+		return
+		
+	# 当结束跳跃的时候重置跳跃次数
+	if control.airborneState == CharacterControl.AirborneState.Idle:
+		_jumped_count = 0;
 		return
 	if control.airborneState != CharacterControl.AirborneState.Jumping:
 		return
@@ -34,7 +54,6 @@ func _physics_process(delta: float) -> void:
 		return
 	currentYSpeed -= self.fallAcclerate * delta;
 	control.velocity.y = currentYSpeed;
-	print(currentYSpeed)
 	return
 
 #region editor

@@ -62,6 +62,7 @@ dash={
 2d_physics/layer_4="角色下平台碰撞"
 2d_physics/layer_5="子弹碰撞"
 2d_physics/layer_6="角色左右碰撞墙壁"
+2d_physics/layer_7="角色"
 
 [rendering]
 
